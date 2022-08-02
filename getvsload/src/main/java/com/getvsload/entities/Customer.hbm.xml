@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.getvsload.entities">
+	<class name="Customer" table="customer" proxy="ICustomer">
+		<id name="customerNo">
+			<column name="customer_no"/>
+		</id>
+		<property name="customerName">
+			<column name="customer_nm"/>
+		</property>
+		<property name="gender"/>
+		<property name="dob"/>
+		<property name="emailAddress">
+			<column name="email_address"/>
+		</property>
+		<property name="mobileNo">
+			<column name="mobile_no"/>
+		</property>
+	</class>
+</hibernate-mapping>
