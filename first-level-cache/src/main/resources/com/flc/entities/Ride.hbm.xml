@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.flc.entities">
+	<class name="Ride" table="ride">
+		<id name="rideNo">
+			<column name="ride_no"/>
+		</id>
+		<property name="source"/>
+		<property name="destination"/>
+		<property name="mobileNo">
+			<column name="mobile_no"/>
+		</property>
+		<property name="carType">
+			<column name="car_type"/>
+		</property>		
+	</class>
+</hibernate-mapping>
