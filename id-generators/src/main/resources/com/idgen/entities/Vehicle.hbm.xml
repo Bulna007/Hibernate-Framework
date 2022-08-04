@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.idgen.entities">
+	<class name="Vehicle" table="vehicle">
+		<id name="vehicleNo">
+			<column name="vehicle_no"/>
+			<!-- assigned :-
+						- default id generator.
+						- user has to provide the primary key value -->
+			<!-- <generator class="assigned"/> -->
+			<!-- increment :-
+						- it queries the last generated primary key column values and 
+							increments by 1 and caches it and returns as an id to be used for storing the data
+						- supports both oracle and MySQL database	 -->
+			<!-- <generator class="increment"/> -->
+			<!-- identity :-
+						- identity id generator works for databases that supports auto increment or identity columns
+						- supports MySQL and MS SQL Server  -->
+			<!-- <generator class="identity"/> -->
+			<!-- sequence :-
+						- sequence id generator is used for oracle database, it doesn'y support auto increment or identity column. -->
+			<!-- <generator class="sequence">
+				<param name="sequence">vehicle_sequence</param>
+			</generator> -->
+			<!-- native :-
+						- native id generator works native to the databases on which our application is running
+						- if we are running our application against MySQL or MS SQL Server then it works as identity id generator 
+						- if we are running our application against oracle database then it behaves like sequence id generator -->
+			<!-- <generator class="native">
+				<param name="sequence">vehicle_sequence</param>
+			</generator> -->
+			<!-- guid :-
+						- guid id generator supports for generating 32 characters hexa decimal strings
+						- only few database supports sys_guid() function like oracle  -->
+			<!-- <generator class="guid"/> -->
+			<!-- uuid :-
+						- uuid id generator works similar to guid for generating surrogate key,
+						- the only difference is, it doesn't depend on underlying databases -->
+			<generator class="uuid"/>
+		</id>
+		<property name="modelName">
+			<column name="model_nm"/>
+		</property>
+		<property name="manufacturer"/>
+		<property name="registrationNo">
+			<column name="registration_no"/>
+		</property>
+		<property name="color"/>
+		<property name="fuelType">
+			<column name="fuel_type"/>
+		</property>
+		<property name="leaseAmount">
+			<column name="lease_amount"/>
+		</property>
+	</class>
+</hibernate-mapping>
