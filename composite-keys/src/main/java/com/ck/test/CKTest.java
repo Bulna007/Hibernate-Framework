@@ -17,7 +17,7 @@ public class CKTest
 		
 		try
 		{
-			configuration = new Configuration().configure();
+			configuration = new Configuration().configure("hibernate-oracle.cfg.xml");
 			sessionFactory = configuration.buildSessionFactory();
 			session = sessionFactory.openSession();
 			
