@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.ck.entities">
+	<class name="LoanApplication" table="loan_application">
+		<!-- 1. Using composite id declaration -->
+		<!-- <composite-id>
+			<key-property name="applicationNo">
+				<column name="application_no"></column>
+			</key-property>
+			<key-property name="branchCode">
+				<column name="branch_code"/>
+			</key-property>
+		</composite-id> -->
+		
+		<!-- 2. Using a seperate key class -->
+		<composite-id name="LoanApplicationNo">
+			<key-property name="applicationNo">
+				<column name="application_no"/>
+			</key-property>
+			<key-property name="branchCode">
+				<column name="branch_code"/>
+			</key-property>
+		</composite-id>
+		
+		<property name="applicantName">
+			<column name="applicant_nm"/>
+		</property>
+		<property name="loanType">
+			<column name="loan_type"/>
+		</property>
+		<property name="loanAmount">
+			<column name="loan_amount"/>
+		</property>
+		<property name="appliedDate">
+			<column name="applied_dt"/>
+		</property>
+		<property name="dob"/>
+		<property name="gender"/>
+	</class>
+</hibernate-mapping>
