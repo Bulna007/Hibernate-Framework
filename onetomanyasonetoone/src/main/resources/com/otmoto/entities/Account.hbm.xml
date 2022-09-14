@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.otmoto.entities">
+	<class name="Account" table="account">
+		<id name="accountNo">
+			<column name="account_no"/>
+			<generator class="increment"/>
+		</id>
+		<property name="accountHolderName">
+			<column name="account_holder_nm"/>
+		</property>
+		<property name="accountType">
+			<column name="account_type"/>
+		</property>
+		<property name="branchCode">
+			<column name="branch_code"/>
+		</property>
+		<property name="oppenedDate">
+			<column name="oppened_dt"/>
+		</property>
+		<property name="balance"/>
+		
+		<set name="lockers">
+			<key column="account_no" unique="true"/>
+			<one-to-many class="Locker"/>
+		</set>
+	</class>
+</hibernate-mapping>
