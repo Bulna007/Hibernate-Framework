@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.onetomanyset.entities">
+	<class name="Address" table="address">
+		<id name="addressNo">
+			<column name="address_no"/>
+			<generator class="increment"/>
+		</id>
+		<property name="addressLine1">
+			<column name="address_line1"/>
+		</property>
+		<property name="addressLine2">
+			<column name="address_line2"/>
+		</property>
+		<property name="city"/>
+		<property name="zip"/>
+		<property name="state"/>
+	</class>
+</hibernate-mapping>
