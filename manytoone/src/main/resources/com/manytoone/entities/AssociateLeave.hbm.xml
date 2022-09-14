@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.manytoone.entities">
+	<class name="AssociateLeave" table="associate_leave">
+		<id name="leaveNo">
+			<column name="leave_no"/>
+			<generator class="increment"/>		
+		</id>
+		<property name="leaveType">
+			<column name="leave_type"/>
+		</property>
+		<property name="description"/>
+		<property name="startDate">
+			<column name="start_dt"/>
+		</property>
+		<property name="endDate">
+			<column name="end_dt"/>
+		</property>
+		<property name="leaveStatus">
+			<column name="leave_status"/>
+		</property>
+		
+		<many-to-one name="associate" column="associate_no" not-null="true"/>
+	</class>
+</hibernate-mapping>
